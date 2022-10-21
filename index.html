@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/lobby.css">
+    <title>PeerChat</title>
+</head>
+<body>
+        <div class="roomForm">
+            <img id="image" src="/public/images/Picture2.png" alt="" srcset="">
+            <div id="roomAccess">
+                <button id="createRoom">CREATE ROOM</button><br>
+                <hr class="divide">
+                <div class="row">
+                    <input type="text" id="roomValue" placeholder="Room ID"><button id="joinRoom">JOIN</button>
+                </div>
+            </div>
+        </div>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js"
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBBQVOILXtvSoHLpC4qHzS33UCI4QksgD4",
+        authDomain: "rtc-peer2peer-32efd.firebaseapp.com",
+        projectId: "rtc-peer2peer-32efd",
+        storageBucket: "rtc-peer2peer-32efd.appspot.com",
+        messagingSenderId: "738693033685",
+        appId: "1:738693033685:web:fe0e29ab66eb15c2b43c5c"   
+    }
+
+    // initialize firebase
+    const app = initializeApp(firebaseConfig);
+
+    const db = getFirestore(app);
+
+    document.querySelector('#createRoom').addEventListener('click', () => {
+        sessionStorage.setItem('request', 'create');
+        window.location = './home.html';
+    });
+
+    document.querySelector('#joinRoom').addEventListener('click',async () => {
+        sessionStorage.setItem('request', 'join');
+        let roomId = document.getElementById('roomValue').value;
+
+        const roomRef = doc(db,'calls', roomId);
+        const roomSnap = await getDoc(roomRef);
+
+        if(!roomSnap.exists()) {
+            alert('The room ' + roomId + ' does not exist.');
+            sessionStorage.removeItem('request');
+        } else {
+            sessionStorage.setItem('roomID', roomId);
+            window.location = './home.html';
+        }
+    });
+</script>
+</html>

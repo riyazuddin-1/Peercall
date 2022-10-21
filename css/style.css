@@ -1,0 +1,99 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: url('/public/images/bg1.jpg');
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: blueviolet;
+    z-index:3;
+}
+#homeElements{
+    width: 100%;
+    margin:auto;
+    margin-top:40px;
+}
+#roomAccess {
+    margin: 20px;
+}
+#createRoom, #joinRoom {
+    margin-top: 20px;
+    padding: 20px;
+    width:300px;
+    border-radius: 10px;
+    border-style:none;
+    cursor:pointer;
+}
+
+.container{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+#guest{
+    width: 95%;
+    height: 525px;
+    margin: auto;
+    border-radius: 10px;
+}
+#local{
+    width: 150px;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 5vw;
+    border: 1px solid silver;
+    border-radius: 10px;
+}
+.video-player{
+    background-color: rgba(0, 0, 0, 0);
+    aspect-ratio: 4/3;
+}
+
+.details{
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+#callTime, #roomValue {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#controls{
+    text-align: center;
+    width: clamp(200px, 300px, 350px);
+    margin: auto;
+}
+.btn{
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border-style:none;
+    cursor:pointer;
+}
+#info{
+    background-color: black;
+    color: white;
+}
+#hangup{
+    background-color: red;
+    color: white;
+}

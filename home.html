@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <video src="" class="video-player" id="local" autoplay playsinline></video>
+    <div class="container">
+        <div style="text-align: center" id="streams">
+            <video src="" class="video-player" id="guest" autoplay playsinline></video>
+        </div>
+        <div class="details">
+            room id: <p id="roomValue"></p>
+            call time: <p id="callTime"></p>
+        </div>
+        <div id="controls">
+            <button class="btn" id="info"><i class="fa-regular fa-circle-question"></i></button>
+            <button class="btn" id="cam"><i class="fa-solid fa-camera"></i></button>
+            <button class="btn" id="mic"><i class="fa-solid fa-microphone"></i></button>
+            <button class="btn" id="hangup"><i class="fa-solid fa-phone-slash"></i></button>
+        </div>
+    </div>
+</body>
+<script type="module" src="./script.js"></script>
+</html>
