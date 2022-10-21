@@ -2,12 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
 import { getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc, collection, onSnapshot, query } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBBQVOILXtvSoHLpC4qHzS33UCI4QksgD4",
-    authDomain: "rtc-peer2peer-32efd.firebaseapp.com",
-    projectId: "rtc-peer2peer-32efd",
-    storageBucket: "rtc-peer2peer-32efd.appspot.com",
-    messagingSenderId: "738693033685",
-    appId: "1:738693033685:web:fe0e29ab66eb15c2b43c5c"   
+  apiKey: "AIzaSyC8Xqqkmkk-vF0vDdPABiZgIrCHQuty6XU",
+  authDomain: "peercall-00.firebaseapp.com",
+  projectId: "peercall-00",
+  storageBucket: "peercall-00.appspot.com",
+  messagingSenderId: "15386103401",
+  appId: "1:15386103401:web:394fbe286e9af86bc51cf8",
+  measurementId: "G-RFS716FD90"  
 }
 
 // initialize firebase
